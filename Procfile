@@ -1,1 +1,1 @@
-web: gunicorn modernconnect.wsgi
+web: gunicorn ModernConnect.wsgi
