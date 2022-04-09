@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 import psycopg2
 from config import database, database_password, database_username, port_name, hostname
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -33,6 +34,7 @@ def skills(request) -> JsonResponse:
     return JsonResponse({"skills": message})
 
 
+@csrf_exempt
 def register(request) -> JsonResponse:
     if not request.POST:
         print("A Post Request was expected.")
